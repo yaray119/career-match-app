@@ -45,6 +45,10 @@ def match_jobs(jobs_df, user_skills):
         return list(set(techs.lower().split(", ")) - user_set)
     jobs_df['missing_skills'] = jobs_df['tech_skills'].apply(missing)
     return jobs_df.sort_values(by='match_score', ascending=False).head(10)
+# Fancy header with logo
+st.image("career_banner.png", use_column_width=True)
+st.title("🚀 CareerMatch: Personalized Job Fit Explorer")
+st.markdown("Helping you match with data-driven career opportunities.")
 
 # Streamlit UI
 st.title("CareerMatch: Personalized Job Fit Explorer")
